@@ -341,22 +341,21 @@ Version:	1.1
   $("#send-form").click(function (event) {
     event.preventDefault();
 
-    var message = "<h2>There is someone interested in using our services:</h2><br><br><strong>Name: </strong>" + $("#name").val() + "<br><strong>Phone: </strong>" +
-        +$("#phone").val() + "<br><strong>Email: </strong>" + $("#email").val() + "<br><strong>Address: </strong>"+$("#address").val() + "<br><strong>APN: </strong>" + $("#apn").val();
+    var message = "<h2>There is someone interested in using our services:</h2><br><br><strong>Name: </strong>" + $("#name").val() + $("#last_name").val() + "<br><strong>Phone: </strong>" +
+        +$("#phone").val() + "<br><strong>Email: </strong>" + $("#email").val() + "<br><strong>And rhe message is: </strong>" + $("#message").val();
 
-    Email.send({
-        SecureToken: "ef445b7a-7b69-4574-abdd-4e63930b9ab6",
-        To: 'texashomeandlandbuyersllc@gmail.com',
-        From: "texashomeandlandbuyersllc@gmail.com",
-        Subject: "I Want to get more info " + $("#email").val(),
-        Body: message
+     Email.send({
+        Host : "relay-hosting.secureserver.net",
+        Username : "info@texasmedicarebenefitsgroup.com",
+        Password : "texasmedicarebenefits",
+        To : 'info@texasmedicarebenefitsgroup.com',
+        From : "info@texasmedicarebenefitsgroup.com",
+        Subject : "I want to get more info " + $("#email").val(),
+        Body : message
     }).then(
-        Swal.fire(
-            'We are almost done!',
-            'We will communicate as soon as possible.',
-            'success'
-        )
-     );
+      alert("Correo enviado")
+    );
+
   });
 
 
