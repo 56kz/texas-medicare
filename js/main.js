@@ -351,7 +351,7 @@ Version:	1.1
         Subject : "I want to get more info " + $("#email").val(),
         Body : message
     }).then(
-      alert("Correo enviado")
+      alert("Correo enviado");
     );
 
   });
