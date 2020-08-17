@@ -341,22 +341,23 @@ Version:	1.1
   $("#send-form").click(function (event) {
     event.preventDefault();
 
-    var message = "<h2>There is someone interested in using our services:</h2><br><br><strong>Name: </strong>" + $("#name").val() + $("#last_name").val() + "<br><strong>Phone: </strong>" +
-        +$("#phone").val() + "<br><strong>Email: </strong>" + $("#email").val() + "<br><strong>And the message is: </strong>" + $("#message").val();
-
-     Email.send({
-        SecureToken: "55c9003f-6ae9-4e18-b68c-160ae6aab0e5",
-        To : 'texasmedicarebenefits@gmail.com',
-        From : "texasmedicarebenefits@gmail.com",
-        Subject : "I want to get more info " + $("#email").val(),
-        Body : message
-    }).then(
-      alert("Correo enviado");
-    );
+		$.ajax({
+			url: 'https://secret-reaches-58045.herokuapp.com/api/email?fname='+$("#name").val() +'&lname='+$("#last_name").val()+'&phone='+$("#phone").val()+'&message='+$("#message").val()+'&email='+$("#email").val()
+		}).done( function() {
+			Swal.fire(
+				'Message',
+				'Your message was sent, we will get in touch with you as son as posible.',
+				'success'
+			  )
+		}).fail( function() {
+			Swal.fire(
+				'Message',
+				'Could´nt send your message, please try again later',
+				'error'
+			  )
+		})
 
   });
-
-
 
 
 })(jQuery);
