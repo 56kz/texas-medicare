@@ -774,7 +774,7 @@ body{
 	text-align: left;
 	z-index:3;
 	border-radius:5px;
-	background:#1A76D1;
+	background: white;
 	 -webkit-transition: all .3s ease-out 0s;
     -moz-transition: all .3s ease-out 0s;
     -ms-transition: all .3s ease-out 0s;
@@ -797,7 +797,8 @@ body{
     margin: 0 auto;
     width: 80%;
     height: 90%;
-    background:#1A76D1;
+    background: white;
+
     opacity: 0;
     filter: blur(10px);
     -webkit-transition: all .3s ease-out 0s;
@@ -836,15 +837,16 @@ body{
 	font-weight:600;
 	display:inline-block;
 	text-transform:capitalize;
-	color:#fff;
+	color: black;
 	margin-top:13px;
 }
 .schedule .single-schedule p{
-	color:#fff;
+	/* color:#fff; */
+  color: black;
 	margin-top:22px;
 }
 .schedule .single-schedule a {
-	color: #fff;
+  color: black;
 	margin-top: 25px;
 	font-weight: 500;
 	display: inline-block;
